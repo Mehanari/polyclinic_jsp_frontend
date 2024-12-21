@@ -17,6 +17,7 @@
   <input type="time" name="endTime" required><br>
   <label>Room Number:</label>
   <input type="number" name="roomNumber" required><br>
+  <br>
   <input type="submit" value="Add Appointment">
 </form>
 </body>

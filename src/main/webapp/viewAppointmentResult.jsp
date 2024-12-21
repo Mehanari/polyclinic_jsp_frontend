@@ -1,11 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="polyclinic.entity.AppointmentResult"%>
+<%@ page import="java.util.TimeZone" %>
 <!DOCTYPE html>
 <html>
 <head>
   <title>View Appointment Result</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .appointment-result-details p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 <div class="container">
@@ -14,6 +29,7 @@
     <%
       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
       SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+      timeFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
       AppointmentResult result = (AppointmentResult) request.getAttribute("appointmentResult");
       int cardNumber = (Integer) request.getAttribute("cardNumber");
     %>

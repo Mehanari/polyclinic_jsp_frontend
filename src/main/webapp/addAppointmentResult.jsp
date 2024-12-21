@@ -33,6 +33,7 @@
   <input type="time" name="appointmentTime" required><br>
   <label>Doctor ID:</label>
   <input type="number" name="doctorID" required><br>
+  <br>
   <input type="submit" value="Add Appointment Result">
 </form>
 <div class="center">

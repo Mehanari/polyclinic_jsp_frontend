@@ -4,6 +4,7 @@
 <%@ page import="polyclinic.entity.Appointment"%>
 <%@ page import="polyclinic.entity.AppointmentResult"%>
 <%@ page import="polyclinic.entity.MedicalCard" %>
+<%@ page import="java.util.TimeZone" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,6 +67,7 @@
   <h2>Appointments</h2>
   <%
     SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+    timeFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
     List<Appointment> appointments = ((MedicalCard) request.getAttribute("medicalCard")).getAppointments().getAppointment();
     if (appointments.isEmpty()) {
   %>
